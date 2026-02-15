@@ -1,3 +1,9 @@
+# 
+# Para executar o bot novamente use o comando:
+# source venv/bin/activate
+# python main.py > bot.log 2>&1 &
+#
+
 # Import o necessário para variáveis de ambiente
 import os
 from dotenv import load_dotenv
@@ -47,12 +53,12 @@ GUILD_ID = 1379932351987191910
 guild = discord.Object(id=GUILD_ID)
 
 # Comandos de dados
-@bot.tree.command(guild=guild, name="rolar", description="Rola dados no formado N#XdY")
+@bot.tree.command(guild=guild, name="r", description="Rola dados no formado N#XdY")
 @app_commands.describe(
     expressao="Exemplos: 2#3d6 ou 2d6",
     gm="Para o GM não mostrar o valor do dado"
 )
-async def rolar(interaction:discord.Interaction, expressao: str, gm: bool):
+async def r(interaction:discord.Interaction, expressao: str, gm: bool):
     
     # ---------------------------
     #   DEFINIÇÃO DA GRAMÁTICA
